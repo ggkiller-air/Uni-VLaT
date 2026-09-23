@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Uni-VLaT: Whole-Body Tactile Adaptation of VLA Policies for Humanoid Loco-Manipulation.">
+  <link rel="canonical" href="https://ggkiller-air.github.io/Uni-VLaT/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Uni-VLaT">
+  <meta property="og:description" content="Whole-Body Tactile Adaptation of VLA Policies for Humanoid Loco-Manipulation.">
+  <meta property="og:url" content="https://ggkiller-air.github.io/Uni-VLaT/">
+  <meta property="og:image" content="https://ggkiller-air.github.io/Uni-VLaT/assets/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Uni-VLaT</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="toc" aria-label="Content">
+    <h3>Content</h3><hr>
+    <ul>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#deploy-in-real">Real-world Demo</a></li>
+      <li><a href="#approach">Method</a></li>
+      <li class="toc-subsection"><a href="#tactile-adaptation">Tactile Adaptation</a></li>
+      <li class="toc-subsection"><a href="#multimodal-prediction">Multimodal Prediction</a></li>
+      <li><a href="#results">Results</a></li>
+      <li class="toc-subsection"><a href="#contact-dynamics">Contact Dynamics</a></li>
+      <li class="toc-subsection"><a href="#cross-policy">Cross-policy Evaluation</a></li>
+      <li class="toc-subsection"><a href="#ablations">Ablations</a></li>
+      <li><a href="#conclusion">Conclusion &amp; Limitations</a></li>
+    </ul>
+  </nav>
+  <main class="main-content" id="main-content">
+    <h1 class="hero-text">Uni-VLaT</h1>
+    <div class="sub-hero-text">Whole-Body Tactile Adaptation of VLA Policies for Humanoid Loco-Manipulation</div>
+    <div class="authors" aria-label="Authors">
+      <p class="author-names"><a href="https://ggkiller-air.github.io/">Zihao Wang</a><sup>1,*</sup>, Shutong Liu<sup>2,*</sup>, Siqi Zheng<sup>3</sup>, Liu Cao<sup>1</sup>, Ruoqi Chen<sup>1</sup>, Rundong Liu<sup>1</sup>, Yanchao Yang<sup>4,†</sup>, Mengdi Xu<sup>5,†</sup></p>
+      <p class="author-affiliations"><span><sup>1</sup> Tsinghua University</span><span><sup>2</sup> Beihang University</span><span><sup>3</sup> Communication University of China</span><span><sup>4</sup> School of Computing and Data Science, The University of Hong Kong</span><span><sup>5</sup> Institute for Interdisciplinary Information Sciences, Tsinghua University</span></p>
+      <p class="author-notes"><span>* Equal contribution</span><span>† Corresponding authors</span></p>
+    </div>
+    <nav class="mobile-nav" aria-label="Jump to section"><a href="#abstract">Abstract</a><a href="#deploy-in-real">Demos</a><a href="#approach">Method</a><a href="#results">Results</a><a href="#conclusion">Conclusion &amp; Limitations</a></nav>
+    <img class="teaser-image" src="assets/overview-20260912.webp" width="2400" height="1350" alt="Uni-VLaT overview: distributed whole-body touch complements vision, language and proprioception for humanoid loco-manipulation." fetchpriority="high">
+    <p class="figure-caption"><span class="paper-name">Uni-VLaT</span> adapts pretrained VLA policies with whole-body tactile sensing and training-time prediction of future tactile, proprioceptive, and visual representations.</p>
+    <div class="quick-links" aria-label="Project resources"><span class="pending-link" aria-label="PDF coming soon" title="PDF coming soon">[pdf] <small>coming soon</small></span><span class="pending-link" aria-label="Code coming soon" title="Code coming soon">[code] <small>coming soon</small></span></div>
+
+    <h2 class="tagline" id="abstract">Abstract</h2>
+    <div class="section"><p>Physical contact often determines how a humanoid should respond during loco-manipulation, yet vision and proprioception provide only indirect evidence of interaction, especially when the contact region is occluded. Distributed tactile sensing preserves spatially resolved contact patterns across the robot body.</p><p><span class="paper-name">Uni-VLaT</span> adapts pretrained vision-language-action policies with a tactile pathway trained for both action generation and prediction of future tactile, proprioceptive, and visual representations. Contextualized tactile features anchor these complementary views of physical interaction. Across five real-robot tasks, Uni-VLaT achieves <b>75% average success</b>, compared with 32% for No Tactile and 68% for tactile input without prediction. Evaluation with Isaac-GR00T and π<sub>0.5</sub>, together with controlled ablations, supports the benefits of post-DiT tactile context and absolute future targets.</p></div>
+    <dl class="key-results" aria-label="Main evaluation at a glance"><div><dt>75%</dt><dd>Average success across five tasks</dd></div><div><dt>+43%</dt><dd>Absolute success-rate gain over No Tactile<br>32% → 75% on Isaac-GR00T</dd></div><div><dt>+7%</dt><dd>Absolute success-rate gain over tactile input without prediction<br>68% → 75%</dd></div></dl>
+
+    <h2 class="tagline" id="deploy-in-real">Real-world Demo</h2>
+    <div class="video-gallery-section" id="taskGallerySection">
+      <div class="video-gallery-container" tabindex="0" role="region" aria-label="Five task stills from the manuscript; scroll horizontally">
+        <div class="video-gallery">
+          <img class="gallery-video" src="assets/task-sweeping-20260912.webp" width="379" height="225" alt="Table Sweeping: robot arm in contact with tabletop objects" loading="lazy">
+          <img class="gallery-video" src="assets/task-loading-20260912.webp" width="379" height="225" alt="Basket Loading: a container holding added objects" loading="lazy">
+          <img class="gallery-video" src="assets/task-walking-20260912.webp" width="379" height="224" alt="Back-Tap Walking: a person interacting with the humanoid" loading="lazy">
+          <img class="gallery-video" src="assets/task-hugging-20260912.webp" width="379" height="224" alt="Human–Robot Hugging: a participant and the humanoid in contact" loading="lazy">
+          <img class="gallery-video" src="assets/task-cleanup-20260912.webp" width="379" height="223" alt="Composed Cleanup: humanoid interacting with a table" loading="lazy">
+        </div>
+      </div>
+      <div class="gallery-caption-container">
+        <div class="gallery-nav-controls"><button class="gallery-nav left" type="button" aria-label="Previous task" data-direction="-1">&lt;</button><button class="gallery-nav right" type="button" aria-label="Next task" data-direction="1">&gt;</button></div>
+        <p class="figure-caption gallery-caption"><b>Whole-body interaction:</b> Table sweeping, basket loading, back-tap walking, human–robot hugging, and composed cleanup. Representative stills from the five real-robot tasks.</p>
+      </div>
+    </div>
+    <img class="teaser-image" src="assets/tasks-20260912.webp" width="2400" height="714" alt="Real-robot rollout sequences: Table Sweeping and Basket Loading in the top row; Back-Tap Walking and Human-Robot Hugging in the middle row; Composed Cleanup in the bottom row." loading="lazy">
+    <p class="figure-caption">Real-robot interaction sequences spanning tactile-triggered locomotion, contact-guided manipulation, changing load, human interaction, and sequential loco-manipulation.</p>
+    <div class="section task-descriptions">
+      <p><b>Table Sweeping:</b> Sweep five objects across the tabletop center line under varying table heights. All five must cross within 60 seconds; dropping any object is a failure.</p>
+      <p><b>Basket Loading:</b> Support a basket as a person adds objects, then release it appropriately when the person takes it away. Success requires stable support without dropping the basket or its contents.</p>
+      <p><b>Back-Tap Walking:</b> Start moving forward within one second of contact on the back, then stop within one second after contact is released.</p>
+      <p><b>Human–Robot Hugging:</b> Embrace people of different sizes and release both arms when the person disengages, without unsafe contact or human intervention.</p>
+      <p><b>Composed Cleanup:</b> Gather all tabletop rubbish into a container, carry it to a waste bin, and deposit it with its contents. Any failed stage makes the rollout unsuccessful.</p>
+    </div>
+
+    <h2 class="tagline" id="approach">Method</h2>
+    <div class="section"><p><b>Tactile as a physical anchor.</b> Tactile sensing directly observes contact at the robot body, proprioception captures the resulting body response, and vision captures changes in the scene. Uni-VLaT connects these complementary observations through future representation prediction while retaining the semantic, visual, and action priors of a pretrained VLA policy.</p></div>
+    <div class="r2s-vertical-layout">
+      <img class="approach-image" src="assets/method-20260912.webp" width="2400" height="1350" alt="Spatial and temporal tactile encoding feeds the pretrained policy. The action path generates whole-body motion; training-only heads predict future tactile, proprioceptive, and visual latents." loading="lazy">
+      <p class="figure-caption"><b>Spatial and temporal tactile tokens interact with visual, language, proprioceptive, and action features inside the pretrained policy. The contextualized tactile tokens provide a shared context for predicting future physical interaction across modalities.</b></p>
+    </div>
+    <h3 class="section-subtitle" id="tactile-adaptation">1. Tactile Adaptation</h3>
+    <div class="section"><p>Distributed tactile sensors cover eight body regions: the chest, central back, left and right shoulders, left and right upper back, and left and right arms. Sensor readings are denoised and normalized by region. Independent regional MLPs map measurements to a common feature width. Eight learned attention queries aggregate the regional embeddings into eight spatial tactile tokens; each token can combine information from multiple body regions. Axial pooling reduces sensitivity to sleeve rotation while retaining contact location along the arm.</p><p>A lightweight temporal Transformer aggregates four causal tactile frames with learned time embeddings and a residual connection to the current frame. A learned scalar gate scales the tactile tokens before they join proprioceptive and noisy action tokens in the DiT trunk. Visual and language features enter through cross-attention.</p></div>
+    <h3 class="section-subtitle" id="multimodal-prediction">2. Multimodal Prediction</h3>
+    <div class="section"><p>After multimodal policy attention, the tactile tokens are pooled into a tactile-anchored cross-modal context. Three modality-specific predictors estimate four future steps of tactile, proprioceptive, and visual representations in their respective latent spaces.</p><p>The predictors learn absolute future latents in three separate modality spaces. Tactile and proprioceptive targets come from exponential-moving-average encoders; visual targets come from a frozen pretrained encoder. Flow-matching action supervision and the three predictive objectives jointly train the policy.</p><p>At deployment, the predictive heads and target encoders are omitted. The policy generates chunks of 64-dimensional motion tokens for the pretrained SONIC whole-body controller, which produces joint-position targets for coordinated upper- and lower-body execution.</p></div>
+
+    <h2 class="tagline" id="results">Results</h2>
+    <div class="section"><p>On a Unitree G1 with Isaac-GR00T, Uni-VLaT achieves <b>75% average success</b> across five contact-rich tasks, compared with 32% without tactile sensing, 68% with tactile input alone, and 69% with tactile-only prediction. Each task uses 50 demonstrations, and each main-table configuration is evaluated over 20 real-robot rollouts. Instability, falling, an emergency stop, or any human intervention counts as failure.</p></div>
+    <div class="results-table-wrap" role="region" aria-label="Real-robot task success rates, horizontally scrollable" tabindex="0"><table><caption>Real-robot success rate (%), Isaac-GR00T.</caption><thead><tr><th scope="col">Task</th><th scope="col">No Tactile</th><th scope="col">Tactile w/o Pred.</th><th scope="col">Tactile Prediction</th><th scope="col">Uni-VLaT</th></tr></thead><tbody><tr><th scope="row">Back-Tap Walking</th><td>0</td><td>85</td><td><strong>90</strong></td><td>85</td></tr><tr><th scope="row">Table Sweeping</th><td>45</td><td>60</td><td>60</td><td><strong>75</strong></td></tr><tr><th scope="row">Basket Loading</th><td>30</td><td>65</td><td>70</td><td><strong>80</strong></td></tr><tr><th scope="row">Human–Robot Hugging</th><td>55</td><td><strong>80</strong></td><td>75</td><td><strong>80</strong></td></tr><tr><th scope="row">Composed Cleanup</th><td>30</td><td>50</td><td>50</td><td><strong>55</strong></td></tr><tr><th scope="row">Average</th><td>32</td><td>68</td><td>69</td><td><strong>75</strong></td></tr></tbody></table></div>
+    <p class="figure-caption">Tactile w/o Pred. adds sensing without predictive supervision. Tactile Prediction additionally predicts future tactile representations. Uni-VLaT jointly predicts future tactile, proprioceptive, and visual representations.</p>
+    <div class="section"><p>Compared with tactile input alone, Uni-VLaT improves Table Sweeping from 60% to 75% and Basket Loading from 65% to 80%. It reaches 80% on Human–Robot Hugging and 55% on Composed Cleanup. For Back-Tap Walking, tactile sensing is the dominant factor: all tactile-enabled variants perform well, and tactile-only prediction achieves the highest success rate of 90%.</p></div>
+    <h3 class="section-subtitle" id="contact-dynamics">Contact Dynamics</h3>
+    <div class="section"><p>Basket Loading tests adaptation to a changing physical load. The recorded Uni-VLaT rollout shows a lower contact response and changes around successive loading events, while No Tactile maintains a relatively high contact level after establishing support. These traces illustrate interaction behavior; they are not a calibrated force measurement or an aggregate safety metric.</p></div>
+    <figure class="research-figure"><img class="teaser-image" src="assets/contact-20260914.webp" width="2400" height="1400" alt="Basket Loading: No Tactile maintains a high response after basket contact; Uni-VLaT responds to successive object placements. Vertical dashed lines mark loading events." loading="lazy"><figcaption class="figure-caption">Basket Loading contact responses aligned with object placements and final removal. These are arbitrary ADC units, not calibrated force. No Tactile sensor readings are recorded only for analysis and are not supplied to its policy.</figcaption></figure>
+    <details class="technical-details"><summary>How the tactile response is measured</summary><p>For each time step, subtract an additional deadband of 2 from each of the 256 baseline-subtracted right-arm taxel readings, clamp negative values to zero, and average across taxels: <span class="equation">y(t) = (1/256) ∑ max(x<sub>c</sub>(t) − 2, 0)</span>. The vertical axis is in arbitrary ADC units.</p></details>
+    <h3 class="section-subtitle" id="cross-policy">Cross-policy Evaluation</h3>
+    <div class="section"><p>The same tactile adaptation principle improves both Isaac-GR00T and π<sub>0.5</sub> on contact-guided sweeping and tactile-triggered walking. Within each comparison, methods share demonstrations, action targets, and the downstream control interface.</p></div>
+    <figure class="research-figure"><img class="teaser-image" src="assets/backbones-20260914.webp" width="2400" height="1594" alt="Cross-policy success rates: Isaac-GR00T sweeping 45 to 75 percent and walking 0 to 85 percent; pi 0.5 sweeping 30 to 60 percent and walking 0 to 90 percent. DP has no measured success rate." loading="lazy"><figcaption class="figure-caption">Table Sweeping success rises from 45% to 75% with Isaac-GR00T and from 30% to 60% with π₀.₅. Back-Tap Walking rises from 0% to 85% and 90%, respectively. Isaac-GR00T uses 20 rollouts per configuration; π₀.₅ uses 10.</figcaption></figure>
+    <div class="results-table-wrap" role="region" aria-label="Cross-policy success rates, horizontally scrollable" tabindex="0"><table><caption>Success rate (%) with and without Uni-VLaT adaptation</caption><thead><tr><th scope="col">Backbone</th><th scope="col">Task</th><th scope="col">No Tactile</th><th scope="col">Uni-VLaT</th></tr></thead><tbody><tr><th scope="row">Isaac-GR00T</th><td>Table Sweeping</td><td>45</td><td>75</td></tr><tr><th scope="row">Isaac-GR00T</th><td>Back-Tap Walking</td><td>0</td><td>85</td></tr><tr><th scope="row">π<sub>0.5</sub></th><td>Table Sweeping</td><td>30</td><td>60</td></tr><tr><th scope="row">π<sub>0.5</sub></th><td>Back-Tap Walking</td><td>0</td><td>90</td></tr></tbody></table></div>
+    <p class="figure-caption">Diffusion Policy (DP), trained from scratch to convergence with the same data and interface, is <b>N/A</b>: its outputs were rejected by deployment safety constraints before execution, so no success rate was measured.</p>
+    <h3 class="section-subtitle" id="ablations">Predictive Context Ablation</h3>
+    <div class="results-table-wrap" role="region" aria-label="Ablation success rates, horizontally scrollable" tabindex="0"><table><caption>Success rate (%) with Isaac-GR00T</caption><thead><tr><th scope="col">Variant</th><th scope="col">Sweeping</th><th scope="col">Back-Tap</th><th scope="col">Average</th></tr></thead><tbody><tr><th scope="row">Full Uni-VLaT</th><td><strong>75</strong></td><td><strong>85</strong></td><td><strong>80</strong></td></tr><tr><th scope="row">Multimodal Prediction</th><td>40</td><td>80</td><td>60</td></tr><tr><th scope="row">Pre-DiT Tactile Prediction</th><td>30</td><td>80</td><td>55</td></tr><tr><th scope="row">Delta Prediction Targets</th><td>20</td><td>50</td><td>35</td></tr></tbody></table></div>
+    <p class="figure-caption">Full Uni-VLaT reuses the 20-rollout main evaluation; each other variant uses 10 rollouts per task. All variants retain the four-frame tactile history and action-learning objective.</p>
+    <div class="section"><p><b>Context matters.</b> Multimodal Prediction uses visual, tactile, and proprioceptive features to predict all three future modalities. Pre-DiT Tactile Prediction uses only pre-DiT tactile representations as the source for all three predictors. Full Uni-VLaT instead predicts from the contextualized post-DiT tactile states, achieving 80% average success versus 60% and 55% for these alternatives.</p><p><b>Persistent contact matters.</b> Replacing absolute future latents with future-minus-current delta targets reduces average success from 80% to 35%. Absolute targets preserve persistent contact and body-state information as well as changes over time.</p></div>
+    <span id="limitations" aria-hidden="true"></span>
+    <h2 class="tagline" id="conclusion">Conclusion &amp; Limitations</h2>
+    <div class="section"><p>Uni-VLaT adapts pretrained VLA policies for contact-rich humanoid loco-manipulation by integrating whole-body tactile sensing and predicting future tactile, proprioceptive, and visual representations during training. Across five real-robot tasks, it achieves 75% average success with Isaac-GR00T. Cross-policy experiments and controlled ablations support the value of tactile-anchored multimodal context and absolute future targets for learning physical interaction.</p><p>Tactile arrays remain sensitive to sensor noise and mounting variation. Limited whole-body tactile simulation restricts large-scale robustness studies, and the real-robot evaluation covers five representative tasks. Tactile-as-instruction behaviors mainly benefit from access to contact signals; richer interactions demand finer tactile regulation and more precise contact control.</p></div>
+  </main>
+  <dialog id="figure-dialog" aria-label="Enlarged figure"><button type="button" class="dialog-close" autofocus>Close ×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
+  <footer class="footer">Uni-VLaT · Project website<br>Layout reference: <a href="https://www.videomimic.net/" target="_blank" rel="noopener noreferrer">VideoMimic</a></footer>
+</body>
+</html>
