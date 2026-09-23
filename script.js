@@ -20,6 +20,9 @@ document.querySelectorAll('.video-gallery-section').forEach(section => {
   track.querySelectorAll('img').forEach(img => img.addEventListener('load', updateButtons));
   updateButtons();
 });
+document.querySelectorAll('video').forEach(video => video.addEventListener('play', () => {
+  document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
+}));
 const dialog = document.getElementById('figure-dialog');
 const enlarged = document.getElementById('dialog-image');
 document.querySelectorAll('main > img, .approach-image, .research-figure img').forEach(img => {

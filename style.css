@@ -30,11 +30,13 @@ img{width:100%;border:1.5px solid #000;border-radius:15px;margin:0 20px;box-sizi
 .quick-links{text-align:center;margin-top:-10px;margin-bottom:30px}
 .quick-links a,.quick-links .pending-link{font-family:'Roboto Mono',monospace;font-size:18px;font-weight:bold;color:#333;text-decoration:none;margin:0 36px;padding:5px 8px}
 .quick-links a:hover,.quick-links a:focus{color:#000;text-decoration:underline}.quick-links .pending-link{color:#888;cursor:default}
+.demo-feature{margin:0 0 40px}.demo-feature-video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px}.demo-feature .figure-caption{margin-bottom:0}
 .video-gallery-section{margin-bottom:40px;width:100vw;position:relative;margin-left:calc((100% - 100vw)/2);box-sizing:border-box}
 .video-gallery-container{box-sizing:border-box;max-width:1150px;margin-left:auto;margin-right:auto;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
 .video-gallery-container::-webkit-scrollbar{display:none}
 .video-gallery{display:flex;gap:15px;padding:0 20px 10px;box-sizing:border-box;width:max-content;margin:0 auto}
-.gallery-video{flex:0 0 auto;height:224px;width:auto;border-radius:15px;box-sizing:border-box;background-color:#fdfaf4;box-shadow:0 4px 12px rgba(0,0,0,.15);margin:0;border:none}
+.gallery-item{flex:0 0 379px;margin:0}.gallery-video{display:block;height:224px;width:100%;object-fit:cover;border-radius:15px;box-sizing:border-box;background-color:#fdfaf4;box-shadow:0 4px 12px rgba(0,0,0,.15);margin:0;border:none}
+.gallery-item figcaption{font-family:'Roboto Mono',monospace;font-size:13px;color:#333;margin:8px 4px 0}.gallery-item figcaption small{color:#666}
 .gallery-nav{background-color:rgba(40,40,40,.8);color:white;border:none;border-radius:50%;width:35px;height:35px;font-size:20px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .2s ease;margin:0 5px;flex-shrink:0}
 .gallery-nav:hover{background-color:rgba(0,0,0,1)}.gallery-nav:disabled{opacity:.35;cursor:default}
 .gallery-nav-controls{display:flex;align-items:center;margin-right:15px}
@@ -54,7 +56,7 @@ caption{color:#555;text-align:left;margin-bottom:18px}th,td{padding:15px 12px;bo
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid #333;outline-offset:4px}
 /* The source has no viewport setting. Preserve desktop styling while fitting narrow screens. */
-@media(max-width:700px){body{padding:30px 16px}.hero-text{font-size:48px}.sub-hero-text{font-size:28px}.quick-links a,.quick-links .pending-link{margin:0 12px}.section{font-size:18px}.tagline{font-size:22px}.video-gallery-section{max-width:100vw}.gallery-caption-container{padding:0 16px}.gallery-caption{padding:0 8px}.gallery-nav-controls{margin-right:6px}.footer{font-size:12px}}
+@media(max-width:700px){body{padding:30px 16px}.hero-text{font-size:48px}.sub-hero-text{font-size:28px}.quick-links a,.quick-links .pending-link{margin:0 12px}.section{font-size:18px}.tagline{font-size:22px}.video-gallery-section{max-width:100vw}.gallery-item{flex-basis:min(320px,calc(100vw - 32px))}.gallery-video{height:auto;aspect-ratio:379/224}.gallery-caption-container{padding:0 16px}.gallery-caption{padding:0 8px}.gallery-nav-controls{margin-right:6px}.footer{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.video-gallery-container{scroll-behavior:auto}.gallery-nav{transition:none}}
 
 /* Review edition: retain the reference typography and geometry. */
