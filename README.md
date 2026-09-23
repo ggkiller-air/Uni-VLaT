@@ -4,7 +4,7 @@ Public project website for **Uni-VLaT: Whole-Body Tactile Adaptation of VLA Poli
 
 Website: https://ggkiller-air.github.io/Uni-VLaT/
 
-The site is plain HTML, CSS, and JavaScript. Figures, videos, and fonts are served locally. There are no analytics or external embeds. The paper and code buttons currently say “coming soon”; replace them with the official links when those releases are ready.
+The site is plain HTML, CSS, and JavaScript. Figures, videos, and fonts are served locally. There are no analytics or external embeds. Paper, arXiv, and Code currently say “coming soon”; replace them and update the preliminary BibTeX when the official releases are ready.
 
 ## Publish with GitHub Pages
 
@@ -16,6 +16,6 @@ The website includes the ICRA 2027 demo video, four individual task videos, a Co
 
 ## Local preview
 
-Run `python -m http.server 8000` in this directory and open `http://localhost:8000/`. Figures can be enlarged with mouse or keyboard; Escape closes the viewer. Tables scroll horizontally on narrow screens.
+Run `python -m http.server 8000` in this directory and open `http://localhost:8000/`. Figures can be enlarged with mouse or keyboard; Escape closes the viewer.
 
 Layout reference: [VideoMimic](https://www.videomimic.net/). Independently authored implementation. Self-hosted fonts retain their accompanying OFL licenses.
