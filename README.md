@@ -12,7 +12,7 @@ In the repository's **Settings → Pages**, choose **Deploy from a branch**, the
 
 ## Content
 
-The website includes the ICRA 2027 demo video, four individual task videos, a Composed Cleanup still image, the main five-task evaluation, contact-response analysis, cross-policy evaluation, and predictive-context ablations. Main Isaac-GR00T configurations use 20 rollouts. The cross-policy π0.5 configurations and non-full ablations use 10 rollouts; Full Uni-VLaT reuses the main evaluation. DP has no measured success rate because deployment constraints rejected its outputs before execution.
+The website includes the ICRA 2027 demo video, five muted, autoplaying, looping task videos, the main five-task evaluation, contact-response analysis, cross-policy evaluation, and predictive-context ablations. Main Isaac-GR00T configurations use 20 rollouts. The cross-policy π0.5 configurations and non-full ablations use 10 rollouts; Full Uni-VLaT reuses the main evaluation. DP has no measured success rate because deployment constraints rejected its outputs before execution.
 
 ## Local preview
 

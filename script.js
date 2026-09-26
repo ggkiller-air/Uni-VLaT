@@ -1,5 +1,6 @@
-document.querySelectorAll('video').forEach(video => video.addEventListener('play', () => {
-  document.querySelectorAll('video').forEach(other => {
+const manualVideos = document.querySelectorAll('video:not([autoplay])');
+manualVideos.forEach(video => video.addEventListener('play', () => {
+  manualVideos.forEach(other => {
     if (other !== video) other.pause();
   });
 }));
