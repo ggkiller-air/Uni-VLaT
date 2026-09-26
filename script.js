@@ -1,10 +1,3 @@
-const manualVideos = document.querySelectorAll('video:not([autoplay])');
-manualVideos.forEach(video => video.addEventListener('play', () => {
-  manualVideos.forEach(other => {
-    if (other !== video) other.pause();
-  });
-}));
-
 const dialog = document.getElementById('figure-dialog');
 const enlarged = document.getElementById('dialog-image');
 document.querySelectorAll('.research-figure img').forEach(img => {
