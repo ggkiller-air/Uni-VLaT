@@ -11,8 +11,8 @@
   <meta property="og:image" content="https://ggkiller-air.github.io/Uni-VLaT/assets/social-preview.jpg">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="675">
   <meta name="twitter:card" content="summary_large_image"><title>Uni-VLaT</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
-  <script src="script.js?v=20260927" defer></script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20260927-2">
+  <script src="script.js?v=20260927-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -99,9 +99,9 @@
 
     <section class="page-section" id="backbones" aria-labelledby="backbones-title">
       <div class="section-heading"><span class="eyebrow">More than one policy</span><h2 class="tagline" id="backbones-title">Generalizes Across VLA Backbones</h2></div>
-      <p class="section-intro">Uni-VLaT improves contact-guided sweeping and tactile-triggered walking with both <b>Isaac-GR00T</b> and <b>π<sub>0.5</sub></b>.</p>
+      <p class="section-intro">Uni-VLaT improves success on Back-Tap Walking, Basket Loading, and Table Sweeping with both <b>Isaac-GR00T</b> and <b>π<sub>0.5</sub></b>. It also raises the normalized stage score on Composed Cleanup.</p>
       <div class="backbone-highlights"><div><strong>Isaac-GR00T</strong><span>Sweeping <b>45% → 75%</b></span><span>Walking <b>0% → 85%</b></span></div><div><strong>π<sub>0.5</sub></strong><span>Sweeping <b>30% → 60%</b></span><span>Walking <b>0% → 90%</b></span></div></div>
-      <figure class="research-figure"><img class="teaser-image" src="assets/backbones-20260914.webp" width="2400" height="1594" alt="Cross-backbone success chart comparing Isaac-GR00T and pi 0.5 with and without Uni-VLaT adaptation." loading="lazy"><figcaption class="figure-caption">Success rates from real-robot rollouts. Isaac-GR00T uses 20 rollouts per configuration; π<sub>0.5</sub> uses 10. Diffusion Policy is N/A because its outputs failed the pre-execution safety check; no success rate was measured.</figcaption></figure>
+      <figure class="research-figure"><img class="teaser-image" src="assets/cross-backbone-20260927.webp" width="2301" height="942" alt="Cross-backbone results. With Uni-VLaT, Isaac-GR00T reaches 85% on Back-Tap Walking, 80% on Basket Loading, and 75% on Table Sweeping; pi 0.5 reaches 90%, 60%, and 60%. Composed Cleanup normalized stage scores rise from 43.3% to 70% and from 26.7% to 46.7%, respectively." loading="lazy"><figcaption class="figure-caption">(a) Real-robot success rates on three tasks; (b) normalized stage score on Composed Cleanup. Isaac-GR00T uses 20 rollouts per configuration and π<sub>0.5</sub> uses 10. <a href="assets/Fig4_CrossBackbone.pdf">View the vector PDF</a>.</figcaption></figure>
     </section>
 
     <section class="page-section" id="contact-dynamics" aria-labelledby="contact-title">

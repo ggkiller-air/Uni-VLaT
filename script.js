@@ -39,3 +39,22 @@ window.addEventListener('scroll', () => {
   }
 }, {passive:true});
 markSection();
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const charts = document.querySelectorAll('.chart-panel');
+  const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      barObserver.unobserve(entry.target);
+    });
+  }, {threshold: 0.15});
+
+  charts.forEach(chart => {
+    chart.querySelectorAll('.bar-track i, .mini-bar i').forEach((bar, index) => {
+      bar.style.setProperty('--bar-delay', `${index * 85}ms`);
+    });
+    chart.classList.add('bar-animate');
+    barObserver.observe(chart);
+  });
+}
