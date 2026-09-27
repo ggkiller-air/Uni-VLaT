@@ -46,7 +46,7 @@ sub, sup { line-height: 0; }
 /* The film opening introduces the physical task before the paper sections. */
 .page-header { position: relative; isolation: isolate; display: flex; align-items: center; width: 100vw; min-height: 760px; min-height: min(900px, 100svh); margin-left: calc(50% - 50vw); overflow: hidden; color: #fff; background: #121719; }
 .hero-media, .hero-media video { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero-media { z-index: -2; background: url('assets/hero-sweeping-20260927.webp') 35% center / cover no-repeat; }
+.hero-media { z-index: -2; background: url('assets/hero-sweeping-pptx.webp') 35% center / cover no-repeat; }
 .hero-media video { object-fit: cover; object-position: 35% center; }
 .page-header::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(5, 10, 12, .1) 0%, rgba(5, 10, 12, .3) 33%, rgba(5, 10, 12, .76) 65%, rgba(5, 10, 12, .9) 100%), linear-gradient(0deg, rgba(5, 10, 12, .65), transparent 32%); }
 .hero-inner { width: min(1260px, calc(100% - 100px)); min-width: 0; margin: 0 auto; padding: 85px 0 100px 40%; }
@@ -154,11 +154,16 @@ sub, sup { line-height: 0; }
 .backbone-highlights strong { flex-basis: 100%; margin-bottom: 12px; font-size: 26px; font-weight: 600; }
 .backbone-highlights span { font: 12px/1.6 var(--mono); }
 .backbone-highlights b { color: #f8c661; }
+.policy-clips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; margin-top: 20px; }
+.policy-clips figure { padding: 12px; border: 1px solid var(--line); background: var(--surface); }
+.policy-clips video { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #101010; }
+.policy-clips figcaption { margin: 12px 0 0; color: var(--muted); font: 11px/1.4 var(--mono); }
 .contact-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; align-items: start; }
 .contact-pair figure { padding: 12px; border: 1px solid var(--line); background: var(--surface); }
-.contact-pair video, .contact-pair img { width: 100%; aspect-ratio: 16/10; object-fit: contain; background: #fff; }
+.contact-pair video { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #101010; }
 .contact-pair figcaption { margin: 12px 0 0; color: var(--muted); font: 11px/1.4 var(--mono); }
-.contact-pair + .figure-caption { margin-top: 18px; }
+.contact-trace { margin-top: 20px; }
+.contact-trace + .figure-caption { margin-top: 18px; }
 .takeaways { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin: 22px 0; }
 .takeaways p { margin: 0; padding: 24px 25px; border-left: 3px solid var(--amber); background: #eeede4; font-size: 18px; line-height: 1.48; }
 .takeaways b { color: var(--gold); }
@@ -219,7 +224,7 @@ sub, sup { line-height: 0; }
   .section-intro, .abstract-copy { margin-left: 0; }
   .section-intro { font-size: 20px; }
   .demo-feature, .research-figure { padding: 8px; }
-  .task-grid, .idea-grid, .backbone-highlights, .contact-pair, .takeaways { grid-template-columns: 1fr; }
+  .task-grid, .idea-grid, .backbone-highlights, .policy-clips, .contact-pair, .takeaways { grid-template-columns: 1fr; }
   .task-card:last-child { grid-column: auto; display: block; }
   .task-card:last-child video { height: auto; }
   .idea-card h3 { margin-top: 16px; }
@@ -233,7 +238,7 @@ sub, sup { line-height: 0; }
   .mini-bar small { font-size: 9px; }
   .chart-legend { gap: 10px; font-size: 9px; }
   .backbone-highlights > div { padding: 22px; }
-  .contact-pair video, .contact-pair img { aspect-ratio: 16/9; }
+  .contact-pair video { aspect-ratio: 4/3; }
   .abstract-copy { font-size: 18px; }
   .bibtex-code { padding: 18px; font-size: 10px; }
 }
