@@ -11,8 +11,8 @@
   <meta property="og:image" content="https://ggkiller-air.github.io/Uni-VLaT/assets/social-preview.jpg">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="675">
   <meta name="twitter:card" content="summary_large_image"><title>Uni-VLaT</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20260927-2">
-  <script src="script.js?v=20260927-2" defer></script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20260927-3">
+  <script src="script.js?v=20260927-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -25,7 +25,10 @@
   </ul></nav>
   <main class="main-content" id="main-content">
     <header class="page-header">
-      <h1 class="hero-text">Uni-VLaT</h1>
+      <div class="hero-media" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-sweeping-20260927.webp"><source src="assets/videos/table-sweeping.mp4" type="video/mp4"></video></div>
+      <div class="hero-inner">
+      <span class="hero-kicker">Research project <span aria-hidden="true">/</span> Whole-body tactile intelligence</span>
+      <h1 class="hero-text">Uni-VLaT<span aria-hidden="true">.</span></h1>
       <p class="sub-hero-text">Whole-Body Tactile Adaptation of VLA Policies for Humanoid Loco-Manipulation</p>
       <div class="authors" aria-label="Authors">
         <p class="author-names"><a href="https://ggkiller-air.github.io/">Zihao Wang</a><sup>1,*</sup>, Shutong Liu<sup>2,*</sup>, Siqi Zheng<sup>3</sup>, Liu Cao<sup>1</sup>, Ruoqi Chen<sup>1</sup>, Rundong Liu<sup>1</sup>, Yanchao Yang<sup>4</sup>, Mengdi Xu<sup>1,†</sup></p>
@@ -38,16 +41,18 @@
         <a class="resource-link" href="#demo">Video <span aria-hidden="true">↗</span></a>
         <span class="resource-link pending-link" aria-label="Code coming soon">Code <small>coming soon</small></span>
       </nav>
-      <p class="tldr"><strong>TL;DR</strong> Whole-body touch helps pretrained VLA policies react to contact. Uni-VLaT reaches <b>75% average success</b> across five real-robot tasks, versus 32% without tactile input.</p>
+      <p class="tldr"><strong>In brief</strong> Whole-body touch helps pretrained VLA policies react to contact. Uni-VLaT reaches <b>75% average success</b> across five real-robot tasks, versus 32% without tactile input.</p>
+      </div>
+      <a class="scroll-cue" href="#demo">Scroll to explore <span aria-hidden="true">↓</span></a>
     </header>
-    <nav class="mobile-nav" aria-label="Jump to section"><a href="#demo">Demo</a><a href="#tasks">Tasks</a><a href="#method">Method</a><a href="#results">Results</a><a href="#backbones">Backbones</a><a href="#abstract">Abstract</a></nav>
+    <nav class="mobile-nav" aria-label="Jump to section"><a href="#demo">Demo</a><a href="#tasks">Tasks</a><a href="#why-touch">Why touch</a><a href="#method">Method</a><a href="#results">Results</a><a href="#backbones">Cross policy</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a></nav>
+
+    <dl class="key-results" aria-label="Main evaluation at a glance"><div><dt>75%</dt><dd>Average success<br>across five tasks</dd></div><div><dt>+43 <small>pts</small></dt><dd>over no tactile input<br>32% → 75%</dd></div><div><dt>+7 <small>pts</small></dt><dd>over tactile input alone<br>68% → 75%</dd></div></dl>
 
     <section class="page-section hero-demo" id="demo" aria-labelledby="demo-title">
       <div class="section-heading"><span class="eyebrow">See it in action</span><h2 class="tagline" id="demo-title">Uni-VLaT in the Real World</h2></div>
       <figure class="demo-feature"><video class="demo-feature-video" controls playsinline preload="none" poster="assets/icra-demo-poster.jpg" aria-label="Uni-VLaT ICRA 2027 demo video"><source src="assets/videos/icra2027-demo.mp4" type="video/mp4"><a href="assets/videos/icra2027-demo.mp4">Download the demo video</a>.</video><figcaption class="figure-caption">ICRA 2027 demo · Whole-body tactile interaction on a Unitree G1.</figcaption></figure>
     </section>
-
-    <dl class="key-results" aria-label="Main evaluation at a glance"><div><dt>75%</dt><dd>Average success<br>across five tasks</dd></div><div><dt>+43 <small>pts</small></dt><dd>over no tactile input<br>32% → 75%</dd></div><div><dt>+7 <small>pts</small></dt><dd>over tactile input alone<br>68% → 75%</dd></div></dl>
 
     <section class="page-section" id="tasks" aria-labelledby="tasks-title">
       <div class="section-heading"><span class="eyebrow">Five contact-rich tasks</span><h2 class="tagline" id="tasks-title">Real-World Tasks</h2></div>
@@ -141,6 +146,6 @@
     </section>
   </main>
   <dialog id="figure-dialog" aria-label="Enlarged figure"><button type="button" class="dialog-close" autofocus>Close ×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
-  <footer class="footer"><strong>Acknowledgements</strong><br>Website layout reference: <a href="https://www.videomimic.net/" target="_blank" rel="noopener noreferrer">VideoMimic</a><br>Uni-VLaT · Project website</footer>
+  <footer class="footer"><strong>Uni-VLaT</strong><br>Visual inspiration: <a href="https://tactile-reactive-dexterous.github.io/" target="_blank" rel="noopener noreferrer">T-Rex</a><br>Whole-body tactile adaptation for humanoid loco-manipulation.</footer>
 </body>
 </html>

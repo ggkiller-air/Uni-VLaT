@@ -18,4 +18,4 @@ The website includes the ICRA 2027 demo video, five muted, autoplaying, looping 
 
 Run `python -m http.server 8000` in this directory and open `http://localhost:8000/`. Figures can be enlarged with mouse or keyboard; Escape closes the viewer.
 
-Layout reference: [VideoMimic](https://www.videomimic.net/). Independently authored implementation. Self-hosted fonts retain their accompanying OFL licenses.
+Visual inspiration: [T-Rex](https://tactile-reactive-dexterous.github.io/). The site uses a task rollout in the hero and self-hosted Source Serif 4 and JetBrains Mono. Their OFL licenses are in `assets/fonts/`.

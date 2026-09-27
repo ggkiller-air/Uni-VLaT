@@ -40,7 +40,16 @@ window.addEventListener('scroll', () => {
 }, {passive:true});
 markSection();
 
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+const heroVideo = document.querySelector('.hero-media video');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (heroVideo && reducedMotion.matches) heroVideo.pause();
+reducedMotion.addEventListener('change', event => {
+  if (!heroVideo) return;
+  if (event.matches) heroVideo.pause();
+  else heroVideo.play().catch(() => {});
+});
+
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
   const charts = document.querySelectorAll('.chart-panel');
   const barObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
