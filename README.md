@@ -4,7 +4,7 @@ Public project website for **Uni-VLaT: Whole-Body Tactile Adaptation of VLA Poli
 
 Website: https://ggkiller-air.github.io/Uni-VLaT/
 
-The site is plain HTML, CSS, and JavaScript. Figures, videos, and fonts are served locally. There are no analytics or external embeds. Paper, arXiv, and Code currently say “coming soon”; replace them and update the preliminary BibTeX when the official releases are ready.
+The site is plain HTML, CSS, and JavaScript. Figures, videos, and fonts are served locally. There are no analytics or external embeds. Paper and arXiv link to [the PDF](https://arxiv.org/pdf/2609.35450) and [the arXiv abstract](https://arxiv.org/abs/2609.35450), and the BibTeX includes the arXiv identifier. Code currently says “coming soon”; replace it when the official release is ready.
 
 ## Publish with GitHub Pages
 
