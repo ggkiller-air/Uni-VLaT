@@ -12,14 +12,14 @@
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="675">
   <meta name="google-site-verification" content="BSITh9zgifGKQtK5TJLJ1al1HuhEgXkXOKAB5-PjTtg" />
   <meta name="twitter:card" content="summary_large_image"><title>Uni-VLaT</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20260927-4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261013-1">
   <script src="script.js?v=20260927-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <nav class="toc" aria-label="Content"><h3>Explore</h3><hr><ul>
     <li><a href="#demo">Demo</a></li><li><a href="#tasks">Real-world tasks</a></li>
-    <li><a href="#why-touch">Why touch?</a></li><li><a href="#method">Method</a></li>
+    <li><a href="#why-touch">Why touch?</a></li><li><a href="#hardware">Tactile hardware</a></li><li><a href="#method">Method</a></li>
     <li><a href="#results">Main results</a></li><li><a href="#backbones">VLA backbones</a></li>
     <li><a href="#contact-dynamics">Contact dynamics</a></li><li><a href="#ablations">Ablations</a></li>
     <li><a href="#abstract">Abstract</a></li><li><a href="#bibtex">BibTeX</a></li>
@@ -46,7 +46,7 @@
       </div>
       <a class="scroll-cue" href="#demo">Scroll to explore <span aria-hidden="true">↓</span></a>
     </header>
-    <nav class="mobile-nav" aria-label="Jump to section"><a href="#demo">Demo</a><a href="#tasks">Tasks</a><a href="#why-touch">Why touch</a><a href="#method">Method</a><a href="#results">Results</a><a href="#backbones">Cross policy</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a></nav>
+    <nav class="mobile-nav" aria-label="Jump to section"><a href="#demo">Demo</a><a href="#tasks">Tasks</a><a href="#why-touch">Why touch</a><a href="#hardware">Hardware</a><a href="#method">Method</a><a href="#results">Results</a><a href="#backbones">Cross policy</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a></nav>
 
     <dl class="key-results" aria-label="Main evaluation at a glance"><div><dt>75%</dt><dd>Average success<br>across five tasks</dd></div><div><dt>+43 <small>pts</small></dt><dd>over no tactile input<br>32% → 75%</dd></div><div><dt>+7 <small>pts</small></dt><dd>over tactile input alone<br>68% → 75%</dd></div></dl>
 
@@ -71,6 +71,21 @@
       <div class="section-heading"><span class="eyebrow">The missing signal</span><h2 class="tagline" id="why-touch-title">Why Touch?</h2></div>
       <p class="section-intro">Vision can miss occluded contact. Proprioception shows how the robot moves, but only indirectly reveals what it touches. Distributed tactile sensing shows where contact happens across the body and how it changes.</p>
       <figure class="research-figure"><img class="teaser-image" src="assets/overview-20260912.webp" width="2400" height="1350" alt="Uni-VLaT combines whole-body touch with vision, language, and proprioception for humanoid loco-manipulation." loading="lazy"><figcaption class="figure-caption">Whole-body tactile sensing complements visual, language, and body-state inputs across the five tasks.</figcaption></figure>
+    </section>
+
+    <section class="page-section" id="hardware" aria-labelledby="hardware-title">
+      <div class="section-heading"><span class="eyebrow">The sensing hardware</span><h2 class="tagline" id="hardware-title">Whole-body Tactile Sensing</h2></div>
+      <p class="section-intro">Distributed tactile sensing captures where contact occurs. The sensor layout and hardware demonstration below show the physical sensing surface and its live spatial response to touch.</p>
+      <div class="hardware-grid">
+        <figure class="research-figure hardware-layout">
+          <img src="assets/whole-body-tactile-layout.png" width="652" height="667" alt="Whole-body tactile sensor layout, showing distributed sensing locations and the dimensions of the sensing surface." loading="lazy">
+          <figcaption class="figure-caption"><strong>Sensor layout</strong>Distributed sensing locations across the physical sensing surface. Click the figure to inspect the layout.</figcaption>
+        </figure>
+        <figure class="hardware-demo">
+          <div class="hardware-demo-media"><video controls muted playsinline preload="none" poster="assets/whole-body-tactile-poster.webp" width="540" height="960" aria-label="Tactile hardware demonstration showing a hand pressing the sensing surface and the live contact heatmap"><source src="assets/videos/whole-body-tactile-sensing.mp4" type="video/mp4"><a href="assets/videos/whole-body-tactile-sensing.mp4">Download the tactile hardware demonstration</a>.</video></div>
+          <figcaption class="figure-caption"><strong>Live tactile response</strong>Pressing the sensing surface produces a spatial contact pattern on the live heatmap.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="page-section" id="method" aria-labelledby="method-title">

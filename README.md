@@ -14,6 +14,8 @@ In the repository's **Settings → Pages**, choose **Deploy from a branch**, the
 
 The website includes a four-task highlight reel and task clips exported from `demo.pptx`, a separate Composed Cleanup clip, contact-response and cross-policy rollouts, the main five-task evaluation, and predictive-context ablations. Main Isaac-GR00T configurations use 20 rollouts. The cross-policy π0.5 configurations and non-full ablations use 10 rollouts; Full Uni-VLaT reuses the main evaluation. DP has no measured success rate because deployment constraints rejected its outputs before execution.
 
+The **Whole-body Tactile Sensing** section pairs the sensor layout with a live contact-response demonstration. The portrait video is served as a silent 540 × 960 H.264 clip with a poster and on-demand loading. The layout uses the existing full-size figure viewer.
+
 ## Local preview
 
 Run `python -m http.server 8000` in this directory and open `http://localhost:8000/`. Figures can be enlarged with mouse or keyboard; Escape closes the viewer.

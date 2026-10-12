@@ -107,6 +107,17 @@ sub, sup { line-height: 0; }
 .figure-open { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; text-align: inherit; cursor: zoom-in; }
 .figure-open::after { content: 'VIEW FULL SIZE ↗'; display: block; margin: 9px 0 2px; color: var(--gold); text-align: right; font: 600 9px var(--mono); letter-spacing: .1em; }
 
+/* Hardware layout and its portrait demonstration retain their full framing. */
+.hardware-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .85fr); gap: 20px; align-items: stretch; }
+.hardware-layout { display: flex; flex-direction: column; justify-content: center; padding: 22px; }
+.hardware-layout img { max-height: 560px; object-fit: contain; }
+.hardware-layout .figure-open { margin-block: auto; }
+.hardware-demo { display: flex; flex-direction: column; padding: 14px; border: 1px solid var(--line); background: var(--surface); }
+.hardware-demo-media { background: #101010; }
+.hardware-demo video { width: 100%; height: auto; aspect-ratio: 9/16; max-height: 620px; object-fit: contain; }
+.hardware-demo .figure-caption { padding: 0 3px 3px; }
+.hardware-grid .figure-caption strong { display: block; margin-bottom: 6px; color: var(--ink); font: 600 24px/1.2 var(--serif); letter-spacing: -.02em; }
+
 /* Task films and method cards */
 .task-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .task-card { overflow: hidden; border: 1px solid var(--line); background: var(--surface); transition: box-shadow .25s, transform .25s; }
@@ -224,6 +235,10 @@ sub, sup { line-height: 0; }
   .section-intro, .abstract-copy { margin-left: 0; }
   .section-intro { font-size: 20px; }
   .demo-feature, .research-figure { padding: 8px; }
+  .hardware-grid { grid-template-columns: 1fr; }
+  .hardware-layout { padding: 14px; }
+  .hardware-layout img { max-height: none; }
+  .hardware-demo video { max-height: 540px; }
   .task-grid, .idea-grid, .backbone-highlights, .policy-clips, .contact-pair, .takeaways { grid-template-columns: 1fr; }
   .task-card:last-child { grid-column: auto; display: block; }
   .task-card:last-child video { height: auto; }
