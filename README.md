@@ -14,7 +14,7 @@ In the repository's **Settings → Pages**, choose **Deploy from a branch**, the
 
 The website includes a four-task highlight reel and task clips exported from `demo.pptx`, a separate Composed Cleanup clip, contact-response and cross-policy rollouts, the main five-task evaluation, and predictive-context ablations. Main Isaac-GR00T configurations use 20 rollouts. The cross-policy π0.5 configurations and non-full ablations use 10 rollouts; Full Uni-VLaT reuses the main evaluation. DP has no measured success rate because deployment constraints rejected its outputs before execution.
 
-The **Whole-body Tactile Sensing** section pairs the sensor layout with a live contact-response demonstration. The portrait video is served as a silent 540 × 960 H.264 clip with a poster and on-demand loading. The layout uses the existing full-size figure viewer.
+The **Whole-body Tactile Sensing** section pairs the sensor layout with a live contact-response demonstration from `juqiao.mp4`. The portrait video is served as a silent 720 × 1028 H.264 clip with a poster and on-demand loading. The layout uses the existing full-size figure viewer.
 
 ## Local preview
 
